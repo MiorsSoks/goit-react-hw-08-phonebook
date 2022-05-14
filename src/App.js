@@ -1,25 +1,26 @@
-import React, { useState } from 'react';
-import { useGetContactsQuery } from './services/contacts';
-import ContactForm from './components/ContactForm';
-import Filter from './components/Filter';
-import ContactList from './components/ContactList';
+import { Routes, Route } from 'react-router-dom';
+import Contacts from './views/contacts/Contacts';
+import AppBar from 'components/AppBar';
+import Register from 'views/contacts/Register';
+import LogIn from 'views/contacts/LogIn';
 
 function App() {
-  const [filter, setFilter] = useState('');
-  const { data, error, isLoading } = useGetContactsQuery();
-
   return (
     <div>
-      <h1>Phonebook</h1>
-      <ContactForm data={data}></ContactForm>
-      <h2>Contacts</h2>
-      <Filter filter={filter} setFilter={setFilter} />
-      <ContactList
-        error={error}
-        isLoading={isLoading}
-        data={data}
-        filter={filter}
-      />
+      <AppBar></AppBar>
+      <Routes>
+        <Route path="/contacts" element={<Contacts />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<LogIn/>} />
+        <Route
+          path="*"
+          element={
+            <main style={{ padding: '1rem' }}>
+              <p>There's nothing here!</p>
+            </main>
+          }
+        />
+      </Routes>
     </div>
   );
 }
