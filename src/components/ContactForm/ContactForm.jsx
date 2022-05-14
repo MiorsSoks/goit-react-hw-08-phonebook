@@ -2,7 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import toast, { Toaster } from 'react-hot-toast';
 import PropTypes from 'prop-types';
-import { useCreateContactMutation } from '../../services/contacts';
+import { useCreateContactMutation } from '../../redux/contacts/contacts';
 import {
   Message,
   Label,
@@ -20,8 +20,8 @@ export default function ContactForm({ data }) {
 
   const handleSubmit = ({ name, number }, { resetForm }) => {
     const contact = {
-      name: name,
-      phone: number,
+       name,
+       number,
     };
     if (
       !data.find(

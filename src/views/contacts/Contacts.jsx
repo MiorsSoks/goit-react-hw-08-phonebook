@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useGetContactsQuery } from '../../services/contacts';
+import { useGetContactsQuery } from '../../redux/contacts/contacts';
 import ContactForm from '../../components/ContactForm';
 import Filter from '../../components/Filter';
 import ContactList from '../../components/ContactList';

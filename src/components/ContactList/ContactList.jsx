@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import { useDeleteContactMutation } from '../../services/contacts';
+import { useDeleteContactMutation } from '../../redux/contacts/contacts';
 import ContactListItem from '../ContactListItem';
 
 export default function ContactList({ error, isLoading, data, filter }) {
@@ -28,12 +28,12 @@ export default function ContactList({ error, isLoading, data, filter }) {
       ) : isLoading ? (
         <>Loading...</>
       ) : filterContacts() ? (
-        filterContacts().map(({ id, name, phone }) => (
+        filterContacts().map(({ id, name, number }) => (
           <ContactListItem
             key={id}
             onDelete={deleteContact}
             name={name}
-            number={phone}
+            number={number}
             deleting={isDeleting}
             id={id}
           />
