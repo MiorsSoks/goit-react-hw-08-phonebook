@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Message = styled.p`
-  color: tomato;
+  color: #ffffff;
 `;
 export const Label = styled.label`
   display: block;
@@ -17,4 +17,5 @@ export const FormContainer = styled.div`
   display: inline-block;
   padding: 20px;
   border: 1px solid black;
+  /* margin: 40px 0 0px 40px; */
 `;

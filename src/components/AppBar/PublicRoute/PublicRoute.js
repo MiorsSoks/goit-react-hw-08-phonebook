@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 export const PublicRoute = ({ children }) => {
   const IsLoggedIn = useSelector(authSelectors.getIsLoggedIn);
 
-  return !IsLoggedIn ? children : <Navigate to='/contacts' />;
+  return !IsLoggedIn ? children : <Navigate to="/contacts" />;
 };
 
 PublicRoute.propTypes = {

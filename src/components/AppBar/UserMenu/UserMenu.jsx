@@ -1,24 +1,23 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { authSelectors } from 'redux/auth';
 import { authOperations } from 'redux/auth';
+import { UserContainer, LogButton } from './UserMenu.styled';
 
 export default function UserMenu() {
-  const name = useSelector(
-    authSelectors.getUsername
-  );
-  const dispatch = useDispatch()
+  const name = useSelector(authSelectors.getUsername);
+  const dispatch = useDispatch();
 
   return (
     <>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-        }}
-      >
+      <UserContainer>
         <p>Welcome, {name} </p>
-        <button type="button" onClick={() => dispatch(authOperations.logOut())}>Logout</button>
-      </div>
+        <LogButton
+          type="button"
+          onClick={() => dispatch(authOperations.logOut())}
+        >
+          Logout
+        </LogButton>
+      </UserContainer>
     </>
   );
 }

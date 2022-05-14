@@ -20,8 +20,8 @@ export default function ContactForm({ data }) {
 
   const handleSubmit = ({ name, number }, { resetForm }) => {
     const contact = {
-       name,
-       number,
+      name,
+      number,
     };
     if (
       !data.find(
