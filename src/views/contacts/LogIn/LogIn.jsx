@@ -1,6 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { useDispatch } from 'react-redux';
+import { Toaster } from 'react-hot-toast';
 import { Message, Label, SubmitButton, FormContainer } from './LogIn.styled';
 import { authOperations } from '../../../redux/auth';
 
@@ -23,6 +24,7 @@ export default function LogIn() {
 
   return (
     <div>
+      <Toaster />
       <Formik
         initialValues={{ email: '', password: '' }}
         onSubmit={handleSubmit}

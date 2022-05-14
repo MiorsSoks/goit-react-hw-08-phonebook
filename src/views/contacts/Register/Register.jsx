@@ -31,13 +31,13 @@ export default function Register() {
         validationSchema={schema}
       >
         <FormContainer>
-          <Form autoComplete="off">
+          <Form>
             <div>
               <Label htmlFor="name">Name</Label>
               <Field type="text" name="name" />
               <ErrorMessage
                 name="name"
-                render={message => <Message>Please enter e-mail</Message>}
+                render={message => <Message>Please enter name</Message>}
               />
             </div>
             <div>
